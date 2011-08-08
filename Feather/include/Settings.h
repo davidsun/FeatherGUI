@@ -1,0 +1,7 @@
+#ifndef SETTINGS_H
+#define SETTINGS_H
+
+#undef FEATHER_GET_BUDDY_ONLINE_STATE
+#undef FEATHER_QUN_SUPPORT
+
+#endif

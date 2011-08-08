@@ -1,0 +1,2 @@
+cp -L ../../Feather/include/*.h ./include/
+cp ../../Feather/libFeather.a ./

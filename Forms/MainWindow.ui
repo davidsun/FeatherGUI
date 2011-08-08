@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>807</width>
+    <height>555</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Feather Message Sender</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <layout class="QVBoxLayout" name="verticalLayout_3">
+        <property name="sizeConstraint">
+         <enum>QLayout::SetDefaultConstraint</enum>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <widget class="QTreeWidget" name="ListAccount">
+          <property name="maximumSize">
+           <size>
+            <width>300</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <attribute name="headerVisible">
+           <bool>false</bool>
+          </attribute>
+          <attribute name="headerVisible">
+           <bool>false</bool>
+          </attribute>
+          <column>
+           <property name="text">
+            <string notr="true">1</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="ButtonLogin">
+          <property name="maximumSize">
+           <size>
+            <width>300</width>
+            <height>16777215</height>
+           </size>
+          </property>
+          <property name="text">
+           <string>登录</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QTabWidget" name="tabWidget">
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <widget class="QWidget" name="tab">
+         <attribute name="title">
+          <string>消息发送</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+             <widget class="QTreeWidget" name="ListInstantSMS">
+              <attribute name="headerVisible">
+               <bool>false</bool>
+              </attribute>
+              <attribute name="headerVisible">
+               <bool>false</bool>
+              </attribute>
+              <column>
+               <property name="text">
+                <string notr="true">1</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTextEdit" name="TextMessage">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>100</height>
+               </size>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QLabel" name="LabelMessageLength">
+              <property name="text">
+               <string>0/180</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="horizontalLayout_3">
+              <property name="topMargin">
+               <number>0</number>
+              </property>
+              <item>
+               <widget class="QPushButton" name="ButtonAddMessage">
+                <property name="text">
+                 <string>添加消息</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QPushButton" name="ButtonDeleteMessage">
+                <property name="text">
+                 <string>删除消息</string>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QPushButton" name="ButtonSendMessage">
+              <property name="text">
+               <string>发送</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_4">
+         <attribute name="title">
+          <string>定时短信</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_5">
+          <item>
+           <widget class="QTreeWidget" name="ListScheduledSMS">
+            <attribute name="headerVisible">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="headerMinimumSectionSize">
+             <number>15</number>
+            </attribute>
+            <attribute name="headerVisible">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="headerMinimumSectionSize">
+             <number>15</number>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>1</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="ButtonImportMessages">
+            <property name="text">
+             <string>导入消息</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_2">
+         <attribute name="title">
+          <string>消息处理</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_3">
+          <item row="0" column="0">
+           <layout class="QVBoxLayout" name="verticalLayout_2">
+            <property name="leftMargin">
+             <number>0</number>
+            </property>
+            <item>
+             <widget class="QTreeWidget" name="ListMessageArrived">
+              <column>
+               <property name="text">
+                <string>账号</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>发送者</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>内容</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+            <item>
+             <widget class="QTreeWidget" name="ListMessageSent">
+              <column>
+               <property name="text">
+                <string>账号</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>接收者</string>
+               </property>
+              </column>
+              <column>
+               <property name="text">
+                <string>内容</string>
+               </property>
+              </column>
+             </widget>
+            </item>
+           </layout>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_3">
+         <attribute name="title">
+          <string>日志</string>
+         </attribute>
+         <layout class="QVBoxLayout" name="verticalLayout_4">
+          <item>
+           <widget class="QTreeWidget" name="ListAccountStatistics">
+            <attribute name="headerVisible">
+             <bool>false</bool>
+            </attribute>
+            <attribute name="headerVisible">
+             <bool>false</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string notr="true">1</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupBox_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>200</height>
+             </size>
+            </property>
+            <property name="title">
+             <string>登录失败的账号</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_6">
+             <item row="0" column="0">
+              <widget class="QTreeWidget" name="ListErrorAccount">
+               <column>
+                <property name="text">
+                 <string>账号</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>错误信息</string>
+                </property>
+               </column>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="tab_5">
+         <attribute name="title">
+          <string>设置</string>
+         </attribute>
+         <layout class="QGridLayout" name="gridLayout_4">
+          <item row="0" column="0">
+           <widget class="QGroupBox" name="groupBox">
+            <property name="title">
+             <string>禁止发送列表</string>
+            </property>
+            <layout class="QGridLayout" name="gridLayout_5">
+             <item row="0" column="0">
+              <widget class="QTreeWidget" name="ListForbiddance">
+               <attribute name="headerVisible">
+                <bool>false</bool>
+               </attribute>
+               <attribute name="headerVisible">
+                <bool>false</bool>
+               </attribute>
+               <column>
+                <property name="text">
+                 <string notr="true">1</string>
+                </property>
+               </column>
+              </widget>
+             </item>
+             <item row="2" column="0">
+              <layout class="QHBoxLayout" name="horizontalLayout_2">
+               <property name="topMargin">
+                <number>0</number>
+               </property>
+               <item>
+                <widget class="QPushButton" name="ButtonAddForbiddance">
+                 <property name="text">
+                  <string>添加</string>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="ButtonRemoveForbiddance">
+                 <property name="text">
+                  <string>删除</string>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>807</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>设置</string>
+    </property>
+    <addaction name="ActionForbid"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>消息</string>
+    </property>
+    <addaction name="ActionAddMessage"/>
+    <addaction name="ActionDeleteMessage"/>
+    <addaction name="separator"/>
+    <addaction name="ActionImportMessage"/>
+   </widget>
+   <addaction name="menu_2"/>
+   <addaction name="menu"/>
+  </widget>
+  <widget class="QStatusBar" name="StatusBar"/>
+  <action name="ActionForbid">
+   <property name="text">
+    <string>禁止发送</string>
+   </property>
+  </action>
+  <action name="ActionAddMessage">
+   <property name="text">
+    <string>添加消息</string>
+   </property>
+   <property name="toolTip">
+    <string>添加消息</string>
+   </property>
+  </action>
+  <action name="ActionImportMessage">
+   <property name="text">
+    <string>导入定时短信</string>
+   </property>
+   <property name="toolTip">
+    <string>导入定时短信</string>
+   </property>
+  </action>
+  <action name="ActionDeleteMessage">
+   <property name="text">
+    <string>删除消息</string>
+   </property>
+  </action>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>ButtonLogin</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotButtonLoginClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>305</x>
+     <y>528</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>666</x>
+     <y>408</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonAddMessage</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotButtonAddMessageClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>601</x>
+     <y>491</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>722</x>
+     <y>436</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonDeleteMessage</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotButtonDeleteMessageClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>791</x>
+     <y>491</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>722</x>
+     <y>233</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonSendMessage</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotButtonSendMessageClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>792</x>
+     <y>520</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>722</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonImportMessages</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotButtonImportMessagesClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>505</x>
+     <y>77</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>804</x>
+     <y>454</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>menubar</sender>
+   <signal>triggered(QAction*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotActionTriggered(QAction*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>12</x>
+     <y>11</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>353</x>
+     <y>292</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonRemoveForbiddance</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotButtonRemoveForbiddanceClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>783</x>
+     <y>511</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>386</x>
+     <y>472</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>ButtonAddForbiddance</sender>
+   <signal>clicked()</signal>
+   <receiver>MainWindow</receiver>
+   <slot>slotButtonAddForbiddanceClicked()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>504</x>
+     <y>493</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>358</x>
+     <y>291</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>slotButtonLoginClicked()</slot>
+  <slot>slotTreeAccountItemClicked(QTreeWidgetItem*,int)</slot>
+  <slot>slotButtonAddMessageClicked()</slot>
+  <slot>slotButtonSendMessageClicked()</slot>
+  <slot>slotButtonDeleteMessageClicked()</slot>
+  <slot>slotButtonImportMessagesClicked()</slot>
+  <slot>slotButtonDeleteScheduledSMSClicked()</slot>
+  <slot>slotButtonShowMessageStatesClicked()</slot>
+  <slot>slotActionTriggered(QAction*)</slot>
+  <slot>slotButtonRemoveForbiddanceClicked()</slot>
+  <slot>slotButtonAddForbiddanceClicked()</slot>
+ </slots>
+</ui>
