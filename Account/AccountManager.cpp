@@ -49,8 +49,7 @@ void AccountManager::updateAccounts(){
 				while (fscanf(fin, "%s%s", username, password) == 2){
 					if (_accounts.find(username) == _accounts.end()){
 						FeatherAccount *account = new FeatherAccount(
-								username, password, file.completeBaseName(),
-								QNetworkProxy(QNetworkProxy::HttpProxy, "edu.zzzcn.info", 2012));
+								username, password, file.completeBaseName());
 						_accounts[username] = account;
 
 						connect(account, SIGNAL(buddyAdded(FeatherAccount *, FeatherGroup, FeatherBuddy)), this,
